@@ -21,31 +21,31 @@ export default function SuspensePage() {
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 const videoSrc = {
-  templateA: [
+  workshopA: [
     {
-      title: "Template A - lorem ipsum dolor",
+      title: "workshop A - lorem ipsum dolor",
       subtitle: "Speaker: orem ipsum dolor",
       src: "https://www.youtube.com/embed/-mIjwN1o7nE?si=yVvNDmiQ6-jkC9RK",
     },
     {
-      title: "Template A - orem ipsum dolor",
+      title: "workshop A - orem ipsum dolor",
       subtitle: "Speaker: orem ipsum dolor",
       src: "https://www.youtube.com/embed/q1XFm21I-VQ?si=45oJr9h99zIFbBZt",
     },
     {
-      title: "Template A -orem ipsum dolor",
+      title: "workshop A -orem ipsum dolor",
       subtitle: "Speaker: orem ipsum dolor",
       src: "https://www.youtube.com/embed/1k37OcjH7BM?si=ammdlSc_BTb2YRPW",
     },
     {
-      title: "Template A - orem ipsum dolor",
+      title: "workshop A - orem ipsum dolor",
       subtitle: "Speaker: orem ipsum dolor",
       src: "https://www.youtube.com/embed/uLL6RZhoj3o?si=us7cTARWntfhwhj9",
     },
   ],
-  templateB: [
+  workshopB: [
     {
-      title: "Workshop B - Opening Remarks",
+      title: "workshop B - Opening Remarks",
       subtitle: "Speaker: orem ipsum dolor",
       src: "https://www.youtube.com/embed/5p248yoa3oE?si=KZzX6dNpBqZqjPOB",
     },
@@ -59,10 +59,10 @@ function Page() {
 
   // State to manage loading status of videos for each workshop
   const [loadingStatusA, setLoadingStatusA] = useState(
-    videoSrc.templateA.map(() => true),
+    videoSrc.workshopA.map(() => true),
   );
   const [loadingStatusB, setLoadingStatusB] = useState(
-    videoSrc.templateB.map(() => true),
+    videoSrc.workshopB.map(() => true),
   );
 
   function handleReadyA(index: number) {
@@ -80,7 +80,7 @@ function Page() {
   return (
     <PageContainer className="flex flex-col items-center">
       <h2 className="scroll-m-20 text-5xl font-medium tracking-tight lg:text-5xl">
-        Template Videos
+        Workshop Videos
       </h2>
       <p className="mt-3 text-lg text-muted-foreground">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -91,10 +91,10 @@ function Page() {
       >
         <TabsList className="mb-6">
           <TabsTrigger value="A" onClick={() => router.push("?workshop=A")}>
-            Template A
+            workshop A
           </TabsTrigger>
           <TabsTrigger value="B" onClick={() => router.push("?workshop=B")}>
-            Template B
+            workshop B
           </TabsTrigger>
         </TabsList>
 
@@ -102,7 +102,7 @@ function Page() {
           value="A"
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-0"
         >
-          {videoSrc.templateA.map((video, index) => (
+          {videoSrc.workshopA.map((video, index) => (
             <div key={video.title} className="space-y-3">
               <div
                 className="relative"
@@ -134,7 +134,7 @@ function Page() {
           value="B"
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-0"
         >
-          {videoSrc.templateB.map((video, index) => (
+          {videoSrc.workshopB.map((video, index) => (
             <div key={video.title} className="space-y-3">
               <div
                 className="relative"
