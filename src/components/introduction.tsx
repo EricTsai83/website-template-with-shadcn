@@ -7,7 +7,7 @@ export default function Introduction() {
       className="container mx-auto flex flex-col items-center px-4"
     >
       <h3 className="text-center text-3xl font-medium">
-        Why Ceate this{" "}
+        Why ceate this{" "}
         <span
           className={cn(
             "relative bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text",
